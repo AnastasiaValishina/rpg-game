@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RPG.Combat;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace RPG.Movement
@@ -7,6 +8,13 @@ namespace RPG.Movement
     {
         [SerializeField] Transform target;
 
+        NavMeshAgent navMeshAgent;
+
+        private void Start()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+
         void Update()
         {
             UpdateAnimator();
@@ -14,15 +22,28 @@ namespace RPG.Movement
 
         void UpdateAnimator()
         {
-            Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+            Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-            GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
+            GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+        }
+
+        public void StartMoveAction(Vector3 destination)
+        {
+            GetComponent<Fighter>().Cancel();
+            MoveTo(destination);
         }
 
         public void MoveTo(Vector3 destination)
         {
-            GetComponent<NavMeshAgent>().destination = destination;
+            navMeshAgent.destination = destination;
+            navMeshAgent.isStopped = false;
         }
+
+        public void Stop()
+        {
+            navMeshAgent.isStopped = true;
+        }
+
     }
 }
