@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using RPG.Movement;
-using System;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Control
 {
@@ -9,14 +9,18 @@ namespace RPG.Control
     {
         Mover mover;
         Fighter fighter;
+        Health health;
         void Start()
         {
             mover = FindObjectOfType<Mover>();
             fighter = FindObjectOfType<Fighter>();
+            health = GetComponent<Health>();
         }
 
         void Update()
         {
+            if (health.IsDead()) return;
+
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;
         }

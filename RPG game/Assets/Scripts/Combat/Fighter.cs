@@ -11,7 +11,7 @@ namespace RPG.Combat
         [SerializeField] float weaponDamage; 
 
         Health target;
-        float timeSinceLastAttack = 0f;
+        float timeSinceLastAttack = Mathf.Infinity;
 
         private void Update()
         {
