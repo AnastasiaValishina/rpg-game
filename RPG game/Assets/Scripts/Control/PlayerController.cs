@@ -12,8 +12,8 @@ namespace RPG.Control
         Health health;
         void Start()
         {
-            mover = FindObjectOfType<Mover>();
-            fighter = FindObjectOfType<Fighter>();
+            mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
         }
 
