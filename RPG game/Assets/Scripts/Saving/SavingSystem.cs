@@ -10,7 +10,9 @@ namespace RPG.Saving
     {
         public void Save(string saveFile)
         {
-            SaveFile(saveFile, CaptureState());
+            Dictionary<string, object> state = LoadFile(saveFile);
+            CaptureState(state);
+            SaveFile(saveFile, state);
         }
 
         public void Load(string saveFile)
@@ -33,6 +35,11 @@ namespace RPG.Saving
         {
             string path = GetPathFromSaveFile(saveFile);
 
+            if (!File.Exists(path)) 
+            {
+                return new Dictionary<string, object>();
+            }
+
             using (FileStream stream = File.Open(path, FileMode.Open))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -40,21 +47,23 @@ namespace RPG.Saving
             }
         }
 
-        private Dictionary<string, object> CaptureState()
+        private void CaptureState(Dictionary<string, object> state)
         {
-            Dictionary<string, object> state = new Dictionary<string, object>();
             foreach(SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
             {
                 state[saveable.GetUniqueIdentifier()] = saveable.CaptureState();
             }
-            return state;
         }
 
         private void RestoreState(Dictionary<string, object> state)
         {
             foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
             {
-                saveable.RestoreState(state[saveable.GetUniqueIdentifier()]);
+                string id = saveable.GetUniqueIdentifier();
+                if (state.ContainsKey(id))
+                {
+                    saveable.RestoreState(state[id]);
+                }
             }
         }
 
