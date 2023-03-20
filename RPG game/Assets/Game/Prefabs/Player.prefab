@@ -126,6 +126,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6444483581229898407, guid: 875091f47071dda45a83b9e3b174e163,
         type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: fb3cb6d61c13da54b96a4514a145987f,
+        type: 2}
+    - target: {fileID: 6444483581229898407, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 8563420756847237151}
@@ -135,6 +141,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 08560bde2b8a86d48a7260f76dd94667,
         type: 2}
+    - target: {fileID: 6444483581229898407, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 8563420756847310967}
+    - target: {fileID: 6444483581229898407, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 8563420756847237151}
     - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
         type: 3}
       propertyPath: healthPoints
@@ -224,6 +240,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9505156, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &8563420756847310967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403948, guid: 679ff741e12a7e740819ede24a7000b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8563420756846907803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8563420756847237151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7,
