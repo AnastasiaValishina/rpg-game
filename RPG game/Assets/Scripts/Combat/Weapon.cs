@@ -52,7 +52,7 @@ namespace RPG.Combat
         {
             Vector3 position = GetHandTransform(rightHand, leftHand).position;
             Projectile projectileInstance = Instantiate(projectile, position, Quaternion.identity);
-            projectileInstance.SetTarget(target);
-        }
+            projectileInstance.SetTarget(target, weaponDamage);
+        }       
     }
 }

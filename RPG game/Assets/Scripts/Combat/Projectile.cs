@@ -1,7 +1,4 @@
 using RPG.Core;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -9,6 +6,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed;
 
     Health target = null;
+    float damage = 0;
 
     void Update()
     {
@@ -27,8 +25,17 @@ public class Projectile : MonoBehaviour
         return target.transform.position + Vector3.up * targetCollider.height / 2;
     }
 
-    public void SetTarget(Health target)
+    public void SetTarget(Health target, float damage)
     {
         this.target = target;
+        this.damage = damage;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Health targetHealth = other.GetComponent<Health>();
+        if (targetHealth != target) return;
+        targetHealth.TakeDamage(damage);
+        Destroy(gameObject);
     }
 }
