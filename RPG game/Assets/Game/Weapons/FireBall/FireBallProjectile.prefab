@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   followsTarget: 0
+  hitEffect: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db,
+    type: 3}
 --- !u!65 &5415287246530346877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4988,7 +4990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19801364, guid: 5cd5599e01f32bd418f20a3b9eac1c57, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19801364, guid: 5cd5599e01f32bd418f20a3b9eac1c57, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -4996,7 +4998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19801364, guid: 5cd5599e01f32bd418f20a3b9eac1c57, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 19801364, guid: 5cd5599e01f32bd418f20a3b9eac1c57, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
