@@ -4,14 +4,23 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] bool followsTarget;
 
     Health target = null;
     float damage = 0;
 
+    private void Start()
+    {
+        transform.LookAt(GetAimLocation());
+    }
     void Update()
     {
         if (target == null) return;
-        transform.LookAt(GetAimLocation());
+
+        if (followsTarget && !target.IsDead())
+        {
+            transform.LookAt(GetAimLocation());
+        }
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -35,6 +44,7 @@ public class Projectile : MonoBehaviour
     {
         Health targetHealth = other.GetComponent<Health>();
         if (targetHealth != target) return;
+        if (target.IsDead()) return;
         targetHealth.TakeDamage(damage);
         Destroy(gameObject);
     }
