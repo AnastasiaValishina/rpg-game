@@ -2,6 +2,8 @@
 using RPG.Saving;
 using UnityEngine;
 using UnityEngine.AI;
+using RPG.Attributes;
+
 
 namespace RPG.Movement
 {
