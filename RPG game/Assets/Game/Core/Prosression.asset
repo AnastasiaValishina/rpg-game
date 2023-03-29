@@ -12,3 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4654efa1b2dcb47a000654751cff58, type: 3}
   m_Name: Prosression
   m_EditorClassIdentifier: 
+  characterClasses:
+  - characterClass: 0
+    health:
+    - 115
+    - 200
+    - 300
+    - 400
+  - characterClass: 1
+    health:
+    - 30
+    - 50
+    - 80
+  - characterClass: 2
+    health:
+    - 30
+    - 50
+    - 80
+  - characterClass: 3
+    health:
+    - 30
+    - 50
+    - 80
