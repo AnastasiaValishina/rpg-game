@@ -108,6 +108,11 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         // weapons
         public void EquipWeapon(Weapon weapon)
         {
