@@ -8,6 +8,7 @@ namespace RPG.Stats
     {
         [Range(1, 99)]
         [SerializeField] int startingLevel = 1;
+        [SerializeField] GameObject levelUpParticleEffect;
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
 
@@ -29,7 +30,13 @@ namespace RPG.Stats
             if (newLevel > currentLevel)
             {
                 currentLevel = newLevel;
+                LevelUpEffect();
             }
+        }
+
+        private void LevelUpEffect()
+        {
+            Instantiate(levelUpParticleEffect, transform);
         }
 
         public float GetStat(Stat stat)
