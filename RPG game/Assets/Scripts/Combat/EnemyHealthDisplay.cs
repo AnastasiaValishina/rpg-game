@@ -21,10 +21,12 @@ namespace RPG.Combat
             if (fighter.GetTarget() == null)
             {
                 textValue.text = "N/A";
+                return;
             }
             else
             {
-                textValue.text = String.Format("{0:0}%", fighter.GetTarget().GetPercentage());
+                Health health = fighter.GetTarget();
+                textValue.text = String.Format("{0:0}/{1:0}", health.GetHealthPoints(), health.GetMaxHealthPoints());
             }
         }
     }
