@@ -1,3 +1,4 @@
+using GameDevTV.Utils;
 using System;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace RPG.Stats
         [SerializeField] Progression progression = null;
         [SerializeField] bool shouldUseModifier = false;
 
-        int currentLevel = 0;
+        LazyValue<int> currentLevel;
         Experience experience;
 
         public event Action onLevelUp;
@@ -20,10 +21,12 @@ namespace RPG.Stats
         private void Awake()
         {
             experience = GetComponent<Experience>();
+            currentLevel = new LazyValue<int>(CalculateLevel);
         }
+
         private void Start()
         {
-            currentLevel = CalculateLevel();
+            currentLevel.ForceInit();
         }
 
         private void OnEnable()
@@ -45,9 +48,9 @@ namespace RPG.Stats
         private void UpdateLevel()
         {
             int newLevel = CalculateLevel();
-            if (newLevel > currentLevel)
+            if (newLevel > currentLevel.value)
             {
-                currentLevel = newLevel;
+                currentLevel.value = newLevel;
                 LevelUpEffect();
                 onLevelUp();
             }
@@ -63,8 +66,6 @@ namespace RPG.Stats
             return (GetBaseStat(stat) + GetAdditiveModifier(stat)) * (1 + GetPercentageModifier(stat)/100);
         }
 
-
-
         private float GetBaseStat(Stat stat)
         {
             return progression.GetStat(stat, characterClass, GetLevel());
@@ -72,11 +73,7 @@ namespace RPG.Stats
 
         public int GetLevel()
         {
-            if (currentLevel < 1)
-            {
-                currentLevel = CalculateLevel();
-            }
-            return currentLevel;
+            return currentLevel.value;
         }
 
         private float GetAdditiveModifier(Stat stat)
