@@ -12,7 +12,6 @@ namespace RPG.Control
         [SerializeField] CursorMapping[] cursorMappings;
 
         Mover mover;
-        Fighter fighter;
         Health health;
 
         enum CursorType
@@ -34,7 +33,6 @@ namespace RPG.Control
         void Awake()
         {
             mover = GetComponent<Mover>();
-            fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
         }
 
@@ -47,7 +45,7 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithCombat()) return;
+            if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
 
             SetCursor(CursorType.None);
@@ -63,22 +61,20 @@ namespace RPG.Control
             return false;
         }
 
-        private bool InteractWithCombat()
+        private bool InteractWithComponent()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetRay());
             foreach (RaycastHit hit in hits)
             {
-                var target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) continue;
-
-                if (!fighter.CanAttack(target.gameObject)) continue;
-
-                if (Input.GetMouseButton(0))
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
+                foreach (IRaycastable raycastable in raycastables)
                 {
-                    fighter.Attack(target.gameObject);
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(CursorType.Combat);
+                        return true;
+                    }
                 }
-                SetCursor(CursorType.Combat);
-                return true;
             }
             return false;
         }
