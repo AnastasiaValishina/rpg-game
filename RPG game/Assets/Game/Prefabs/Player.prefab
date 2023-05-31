@@ -58,6 +58,7 @@ MonoBehaviour:
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
+  maxHavMeshProjectionDistance: 1
 --- !u!114 &7627800360577929050
 MonoBehaviour:
   m_ObjectHideFlags: 0
