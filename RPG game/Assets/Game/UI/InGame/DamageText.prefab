@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1689865570023924851}
   - component: {fileID: 3796242812608505585}
   - component: {fileID: 940830347313364505}
+  - component: {fileID: 5378863364131270685}
+  - component: {fileID: 612808928652099807}
   m_Layer: 5
   m_Name: DamageText
   m_TagString: Untagged
@@ -113,6 +115,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db83a0f34a510e44292fabd381fa0309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &5378863364131270685
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98387787252962712}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 28779e37eb55ca14783102b88db2a6ea, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 28779e37eb55ca14783102b88db2a6ea, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!225 &612808928652099807
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98387787252962712}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1647491931569381994
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4406908979749059513}
+  - component: {fileID: 2647776422017635791}
   m_Layer: 0
   m_Name: DamageText
   m_TagString: Untagged
@@ -223,3 +254,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2647776422017635791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199058032254282300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d059223965f02784e97d0a10c383c176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
