@@ -6,7 +6,7 @@ namespace RPG.Core
     {
         private void LateUpdate()
         {
-            transform.LookAt(Camera.main.transform);
+            transform.forward = Camera.main.transform.forward;
         }
     }
 }
