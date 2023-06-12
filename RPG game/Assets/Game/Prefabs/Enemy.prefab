@@ -44,6 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 4
+  agroCooldownTme: 5
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   dwellingTime: 1
@@ -237,12 +238,47 @@ PrefabInstance:
     - target: {fileID: 8426825659779786241, guid: 875091f47071dda45a83b9e3b174e163,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
         type: 3}
       propertyPath: healthPoints
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1599199333700678239}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Aggrevate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: RPG.Control.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850815644887463504, guid: 875091f47071dda45a83b9e3b174e163,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875091f47071dda45a83b9e3b174e163, type: 3}
