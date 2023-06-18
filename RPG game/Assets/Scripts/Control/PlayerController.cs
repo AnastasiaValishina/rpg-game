@@ -11,6 +11,7 @@ namespace RPG.Control
     {
         [SerializeField] CursorMapping[] cursorMappings;
         [SerializeField] float maxHavMeshProjectionDistance;
+        [SerializeField] float raycastRadius = 1f;
 
         Mover mover;
         Health health;
@@ -74,7 +75,7 @@ namespace RPG.Control
 
         private RaycastHit[] RaycastAllSorted()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetRay());
+            RaycastHit[] hits = Physics.SphereCastAll(GetRay(), raycastRadius);
             float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
