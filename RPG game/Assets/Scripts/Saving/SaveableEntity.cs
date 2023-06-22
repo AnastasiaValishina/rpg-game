@@ -1,11 +1,7 @@
-using RPG.Core;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 namespace RPG.Saving
 {
@@ -20,6 +16,7 @@ namespace RPG.Saving
         {
             return uniqueIdentifier;
         }
+
         public object CaptureState()
         {
             Dictionary<string, object> state = new Dictionary<string, object>();

@@ -1,10 +1,9 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Collections.Generic;
-using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 namespace RPG.Saving
 {
@@ -23,6 +22,7 @@ namespace RPG.Saving
             yield return SceneManager.LoadSceneAsync(buildIndex);
             RestoreState(state);
         }
+
         public void Save(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
@@ -94,7 +94,7 @@ namespace RPG.Saving
             }
         }
 
-        string GetPathFromSaveFile(string saveFile)
+        private string GetPathFromSaveFile(string saveFile)
         {
             return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
         }
