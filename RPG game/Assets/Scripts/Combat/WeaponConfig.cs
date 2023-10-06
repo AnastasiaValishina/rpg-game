@@ -1,11 +1,11 @@
 using UnityEngine;
 using RPG.Attributes;
-
+using GameDevTV.Inventories;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon")]
-    public class WeaponConfig : ScriptableObject
+    public class WeaponConfig : EquipableItem
     {
         [SerializeField] AnimatorOverrideController animatorOverride;
         [SerializeField] Weapon equippedPrefab = null;

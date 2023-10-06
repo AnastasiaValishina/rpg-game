@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4612812270194346032}
   - component: {fileID: 2400127903250682763}
-  - component: {fileID: 8540430568573413040}
+  - component: {fileID: 6080376360338719701}
+  - component: {fileID: -3784375325126810895}
   m_Layer: 0
   m_Name: BowPickup
   m_TagString: Untagged
@@ -46,7 +47,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0.8}
---- !u!114 &8540430568573413040
+--- !u!114 &6080376360338719701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,10 +56,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 540041131271324657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31540dea1755f8645bf4843a11662585, type: 3}
+  m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5d6c515b9f63c74469d0219c43046575, type: 2}
+--- !u!114 &-3784375325126810895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540041131271324657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bee3f0d5ee7efb42830916a6dbef21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1949302068584658790
 PrefabInstance:
   m_ObjectHideFlags: 0

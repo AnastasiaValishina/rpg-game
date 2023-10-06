@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 12603861263461227}
   - component: {fileID: 6246382885171606907}
   - component: {fileID: 8761236782125970068}
+  - component: {fileID: 2122806144401946376}
+  - component: {fileID: 7735076694699177386}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -61,6 +63,30 @@ MonoBehaviour:
   weapon: {fileID: 0}
   healthToRestore: 30
   respawnTime: 10
+--- !u!114 &2122806144401946376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12603861263461226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7735076694699177386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12603861263461226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bee3f0d5ee7efb42830916a6dbef21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3317299962645113115
 PrefabInstance:
   m_ObjectHideFlags: 0
