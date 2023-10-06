@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: d7901d6d-8e7a-40a5-acb9-48a6da291839
   displayName: Hat
   description: Saves from rain
-  icon: {fileID: 21300000, guid: 7c4272045db356d4191801bf4343dbe3, type: 3}
+  icon: {fileID: 21300000, guid: c1b61b3a91732a747a8496fc75a13fe2, type: 3}
   pickup: {fileID: 3672172959114586, guid: c7cfea8ae488b49458c240a6d9606502, type: 3}
   stackable: 0
-  allowedEquipLocation: 5
+  allowedEquipLocation: 0
