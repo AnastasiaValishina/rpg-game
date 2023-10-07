@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 12603861263461227}
   - component: {fileID: 6246382885171606907}
-  - component: {fileID: 8761236782125970068}
   - component: {fileID: 2122806144401946376}
   - component: {fileID: 7735076694699177386}
   m_Layer: 0
@@ -48,21 +47,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.72
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8761236782125970068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12603861263461226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31540dea1755f8645bf4843a11662585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  healthToRestore: 30
-  respawnTime: 10
 --- !u!114 &2122806144401946376
 MonoBehaviour:
   m_ObjectHideFlags: 0
